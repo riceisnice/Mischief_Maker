@@ -68,7 +68,6 @@ func on_material_released(name):
 			$Sophia.make_animation()
 		else:
 			$Sprite/Speech.text = "That doesn't work..."
-			third = false
 		
 
 func find_material(name):

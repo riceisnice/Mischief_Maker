@@ -6,7 +6,6 @@ enum {READY, TXT1, TXT2, TXT3, SPAWN_MATS, GAMELOOP, LEVEL_WON, TXT4, TXT5, END_
 
 var state
 var prepared_mats
-var third = false
 
 func _ready():
 	state = READY
@@ -78,7 +77,6 @@ func on_material_released(name):
 			$Sophia.make_animation()
 		else:
 			$Sprite/Speech.text = "That doesn't work..."
-			third = false
 		
 
 func find_material(name):

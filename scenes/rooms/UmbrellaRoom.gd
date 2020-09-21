@@ -6,7 +6,6 @@ enum {READY, TXT1, TXT2, TXT3, SPAWN_MATS, GAMELOOP, LEVEL_WON, TXT4, TXT5, END_
 
 var state
 var prepared_mats
-var third = false
 
 func _ready():
 	state = READY
@@ -48,7 +47,7 @@ func on_material_released(name):
 			$thread.hide()
 			$threaded_needle.position = $thread.position
 			$threaded_needle.reveal()
-		elif third and (name == "threaded_needle" or name == "patch" or name == "broken_umbrella") and (other == "threaded_needle" or other == "patch" or other == "broken_umbrella"):
+		elif (name == "threaded_needle" and mat.overlapping.has(find_material("patch"))) and mat.overlapping.has(find_material("broken_umbrella")) or (name == "patch" and mat.overlapping.has(find_material("threaded_needle"))) and mat.overlapping.has(find_material("broken_umbrella")) or (name == "broken_umbrella" and mat.overlapping.has(find_material("patch")) and mat.overlapping.has(find_material("threaded_needle"))):
 			$Sprite/Speech.text = $patched_umbrella.material_desc
 			$threaded_needle.hide()
 			$patch.hide()
@@ -61,10 +60,8 @@ func on_material_released(name):
 			$Sophia.make_animation()
 		elif (name == "threaded_needle" or name == "patch" or name == "broken_umbrella") and (other == "threaded_needle" or other == "patch" or other == "broken_umbrella"):
 			$Sprite/Speech.text = "I think I need one more thing here."
-			third = true
 		else:
 			$Sprite/Speech.text = "That doesn't work..."
-			third = false
 		
 
 func find_material(name):

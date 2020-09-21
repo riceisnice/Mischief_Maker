@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Mischief Maker"
-run/main_scene="res://scenes/rooms/Room1.tscn"
+run/main_scene="res://scenes/rooms/Intro.tscn"
 config/icon="res://icon.png"
 
 [display]

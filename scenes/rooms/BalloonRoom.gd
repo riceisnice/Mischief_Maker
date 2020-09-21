@@ -6,7 +6,6 @@ enum {READY, TXT1, TXT2, TXT3, SPAWN_MATS, GAMELOOP, LEVEL_WON, TXT4, TXT5, END_
 
 var state
 var prepared_mats
-var third = false
 
 func _ready():
 	state = READY
@@ -41,7 +40,7 @@ func on_material_released(name):
 			state = LEVEL_WON
 			$Timer.start(TEXT_TIME)
 			$Sophia.make_animation()
-		elif third and (name == "helium_tank" or name == "balloon_bag" or name == "twine") and (other == "helium_tank" or other == "balloon_bag" or other == "twine"):
+		elif (name == "helium_tank" and mat.overlapping.has(find_material("balloon_bag"))) and mat.overlapping.has(find_material("twine")) or (name == "helium_tank" and mat.overlapping.has(find_material("balloon_bag"))) and mat.overlapping.has(find_material("twine")) or (name == "twine" and mat.overlapping.has(find_material("helium_tank")) and mat.overlapping.has(find_material("balloon_bag"))):
 			$Sprite/Speech.text = $helium_balloons.material_desc
 			$balloon_bag.hide()
 			$twine.hide()
@@ -49,10 +48,8 @@ func on_material_released(name):
 			$helium_balloons.reveal()
 		elif (name == "helium_tank" or name == "balloon_bag" or name == "twine") and (other == "helium_tank" or other == "balloon_bag" or other == "twine"):
 			$Sprite/Speech.text = "I think I need one more thing here."
-			third = true
 		else:
 			$Sprite/Speech.text = "That doesn't work..."
-			third = false
 		
 
 func find_material(name):

@@ -6,7 +6,6 @@ enum {READY, TXT1, TXT2, TXT3, SPAWN_MATS, GAMELOOP, LEVEL_WON, TXT4, TXT5, END_
 
 var state
 var prepared_mats
-var third = false
 
 func _ready():
 	state = READY
@@ -37,7 +36,7 @@ func on_material_released(name):
 			$clippers.hide()
 			$stick.reveal()
 			$twigs.reveal()
-		elif third and (name == "stick" or name == "twigs" or name == "twine") and (other == "stick" or other == "twigs" or other == "twine"):
+		elif (name == "twigs" and mat.overlapping.has(find_material("stick"))) and mat.overlapping.has(find_material("twine")) or (name == "stick" and mat.overlapping.has(find_material("twigs"))) and mat.overlapping.has(find_material("twine")) or (name == "twine" and mat.overlapping.has(find_material("stick")) and mat.overlapping.has(find_material("twigs"))):
 			$Sprite/Speech.text = $broom.material_desc
 			$stick.hide()
 			$twigs.hide()
@@ -51,10 +50,8 @@ func on_material_released(name):
 			$Sophia.make_animation()
 		elif (name == "stick" or name == "twigs" or name == "twine") and (other == "stick" or other == "twigs" or other == "twine"):
 			$Sprite/Speech.text = "I think I need one more thing here."
-			third = true
 		else:
 			$Sprite/Speech.text = "That doesn't work..."
-			third = false
 		
 
 func find_material(name):
