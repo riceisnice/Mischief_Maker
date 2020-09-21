@@ -47,10 +47,10 @@ func _process(_delta):
 		position = (get_global_mouse_position() / 2) + grabbed_offset
 	if position.y > BACK:
 		rel = (position.y - BACK) / (FRONT - BACK)
-		sc = 0.5 + (0.5 * rel)
+		sc = 0.75 + (0.5 * rel)
 	else:
 		rel = 0
-		sc = 0.5
+		sc = 0.75
 	scale = Vector2(sc, sc)
 	z_index = rel * 10
 
