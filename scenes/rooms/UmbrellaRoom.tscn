@@ -1,0 +1,232 @@
+[gd_scene load_steps=61 format=2]
+
+[ext_resource path="res://sprites/room.png" type="Texture" id=1]
+[ext_resource path="res://scenes/objects/Sophia.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sprites/speech.png" type="Texture" id=3]
+[ext_resource path="res://sounds/Hopeful.wav" type="AudioStream" id=4]
+[ext_resource path="res://scenes/rooms/UmbrellaRoom.gd" type="Script" id=5]
+[ext_resource path="res://sounds/booom.wav" type="AudioStream" id=6]
+[ext_resource path="res://sprites/speech2.png" type="Texture" id=7]
+[ext_resource path="res://scenes/objects/Material.tscn" type="PackedScene" id=8]
+[ext_resource path="res://sprites/items/needle.png" type="Texture" id=9]
+[ext_resource path="res://sprites/items/folded_umbrella.png" type="Texture" id=10]
+[ext_resource path="res://sprites/items/broken_umbrella.png" type="Texture" id=11]
+[ext_resource path="res://sprites/items/fabric.png" type="Texture" id=12]
+[ext_resource path="res://sprites/items/haystack.png" type="Texture" id=13]
+[ext_resource path="res://sprites/items/thread.png" type="Texture" id=14]
+[ext_resource path="res://sprites/items/patch.png" type="Texture" id=15]
+[ext_resource path="res://sounds/Wah wah wah but major.wav" type="AudioStream" id=16]
+[ext_resource path="res://sprites/fadeout/fadeout0021.png" type="Texture" id=17]
+[ext_resource path="res://sprites/fadeout/fadeout0023.png" type="Texture" id=18]
+[ext_resource path="res://sprites/fadeout/fadeout0024.png" type="Texture" id=19]
+[ext_resource path="res://sprites/fadeout/fadeout0022.png" type="Texture" id=20]
+[ext_resource path="res://sprites/fadeout/fadeout0020.png" type="Texture" id=21]
+[ext_resource path="res://sprites/fadeout/fadeout0012.png" type="Texture" id=22]
+[ext_resource path="res://sprites/fadeout/fadeout0009.png" type="Texture" id=23]
+[ext_resource path="res://sprites/fadeout/fadeout0015.png" type="Texture" id=24]
+[ext_resource path="res://sprites/fadeout/fadeout0017.png" type="Texture" id=25]
+[ext_resource path="res://sprites/fadeout/fadeout0016.png" type="Texture" id=26]
+[ext_resource path="res://sprites/fadeout/fadeout0018.png" type="Texture" id=27]
+[ext_resource path="res://sprites/fadeout/fadeout0011.png" type="Texture" id=28]
+[ext_resource path="res://sprites/fadeout/fadeout0019.png" type="Texture" id=29]
+[ext_resource path="res://sprites/fadeout/fadeout0010.png" type="Texture" id=30]
+[ext_resource path="res://sprites/fadeout/fadeout0014.png" type="Texture" id=31]
+[ext_resource path="res://sprites/fadeout/fadeout0013.png" type="Texture" id=32]
+[ext_resource path="res://sprites/fadeout/fadeout0025.png" type="Texture" id=33]
+[ext_resource path="res://sprites/fadeout/fadeout0027.png" type="Texture" id=34]
+[ext_resource path="res://sprites/fadeout/fadeout0028.png" type="Texture" id=35]
+[ext_resource path="res://sprites/fadeout/fadeout0000.png" type="Texture" id=36]
+[ext_resource path="res://sprites/fadeout/fadeout0001.png" type="Texture" id=37]
+[ext_resource path="res://sprites/fadeout/fadeout0002.png" type="Texture" id=38]
+[ext_resource path="res://sprites/fadeout/fadeout0006.png" type="Texture" id=39]
+[ext_resource path="res://sprites/fadeout/fadeout0004.png" type="Texture" id=40]
+[ext_resource path="res://sprites/fadeout/fadeout0003.png" type="Texture" id=41]
+[ext_resource path="res://sprites/fadeout/fadeout0005.png" type="Texture" id=42]
+[ext_resource path="res://sprites/fadeout/fadeout0007.png" type="Texture" id=43]
+[ext_resource path="res://sprites/fadeout/fadeout0008.png" type="Texture" id=44]
+[ext_resource path="res://sprites/fadeout/fadeout0029.png" type="Texture" id=45]
+[ext_resource path="res://sprites/fadeout/fadeout0036.png" type="Texture" id=46]
+[ext_resource path="res://sprites/fadeout/fadeout0031.png" type="Texture" id=47]
+[ext_resource path="res://sprites/fadeout/fadeout0039.png" type="Texture" id=48]
+[ext_resource path="res://sprites/fadeout/fadeout0037.png" type="Texture" id=49]
+[ext_resource path="res://sprites/fadeout/fadeout0030.png" type="Texture" id=50]
+[ext_resource path="res://sprites/fadeout/fadeout0033.png" type="Texture" id=51]
+[ext_resource path="res://sprites/fadeout/fadeout0038.png" type="Texture" id=52]
+[ext_resource path="res://sprites/fadeout/fadeout0032.png" type="Texture" id=53]
+[ext_resource path="res://sprites/fadeout/fadeout0034.png" type="Texture" id=54]
+[ext_resource path="res://sprites/fadeout/fadeout0035.png" type="Texture" id=55]
+[ext_resource path="res://sprites/fadeout/fadeout0040.png" type="Texture" id=56]
+[ext_resource path="res://sprites/items/scissors.png" type="Texture" id=57]
+[ext_resource path="res://sprites/items/threaded_needle.png" type="Texture" id=58]
+[ext_resource path="res://sprites/items/patched_umbrella.png" type="Texture" id=59]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 41 ), ExtResource( 40 ), ExtResource( 42 ), ExtResource( 39 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 23 ), ExtResource( 30 ), ExtResource( 28 ), ExtResource( 22 ), ExtResource( 32 ), ExtResource( 31 ), ExtResource( 24 ), ExtResource( 26 ), ExtResource( 25 ), ExtResource( 27 ), ExtResource( 29 ), ExtResource( 21 ), ExtResource( 17 ), ExtResource( 20 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 45 ), ExtResource( 50 ), ExtResource( 47 ), ExtResource( 53 ), ExtResource( 51 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 46 ), ExtResource( 49 ), ExtResource( 52 ), ExtResource( 48 ), ExtResource( 56 ) ],
+"loop": false,
+"name": "default",
+"speed": 12.0
+} ]
+
+[node name="Room1" type="Sprite"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+centered = false
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sophia" parent="." instance=ExtResource( 2 )]
+position = Vector2( 248, 175 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Speech" type="Label" parent="Sprite"]
+margin_left = 161.0
+margin_top = 40.0
+margin_right = 323.0
+margin_bottom = 91.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Next" type="Sprite" parent="Sprite"]
+visible = false
+texture = ExtResource( 7 )
+centered = false
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="EndTune" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="folded_umbrella" parent="." groups=[
+"start_mats",
+] instance=ExtResource( 8 )]
+position = Vector2( 301.617, 217.354 )
+material_name = "folded_umbrella"
+material_desc = "Hey, it looks like we already have one!"
+
+[node name="Sprite" parent="folded_umbrella" index="0"]
+texture = ExtResource( 10 )
+
+[node name="fabric" parent="." groups=[
+"start_mats",
+] instance=ExtResource( 8 )]
+position = Vector2( 365.617, 185.354 )
+material_name = "fabric"
+material_desc = "I like the colors on this fabric."
+
+[node name="Sprite" parent="fabric" index="0"]
+texture = ExtResource( 12 )
+
+[node name="scissors" parent="." groups=[
+"start_mats",
+] instance=ExtResource( 8 )]
+position = Vector2( 168.898, 185.354 )
+material_name = "scissors"
+material_desc = "I shouldn't run with these."
+
+[node name="Sprite" parent="scissors" index="0"]
+texture = ExtResource( 57 )
+
+[node name="thread" parent="." groups=[
+"start_mats",
+] instance=ExtResource( 8 )]
+position = Vector2( 399.383, 255.99 )
+material_name = "thread"
+material_desc = "This thread is good for sewing."
+
+[node name="Sprite" parent="thread" index="0"]
+texture = ExtResource( 14 )
+
+[node name="haystack" parent="." groups=[
+"start_mats",
+] instance=ExtResource( 8 )]
+position = Vector2( 104.898, 255.99 )
+material_name = "haystack"
+material_desc = "This haystack looks awful sus."
+
+[node name="Sprite" parent="haystack" index="0"]
+texture = ExtResource( 13 )
+
+[node name="broken_umbrella" parent="." instance=ExtResource( 8 )]
+position = Vector2( 301.617, 223.99 )
+material_name = "broken_umbrella"
+material_desc = "Aww... it's ripped..."
+
+[node name="Sprite" parent="broken_umbrella" index="0"]
+texture = ExtResource( 11 )
+
+[node name="patch" parent="." instance=ExtResource( 8 )]
+position = Vector2( 93.6589, 40 )
+material_name = "patch"
+material_desc = "I like the colors on this fabric."
+
+[node name="Sprite" parent="patch" index="0"]
+texture = ExtResource( 15 )
+
+[node name="needle" parent="." instance=ExtResource( 8 )]
+position = Vector2( 211.171, 230.872 )
+material_name = "needle"
+material_desc = "What d'you know? A needle in a haystack."
+
+[node name="Sprite" parent="needle" index="0"]
+texture = ExtResource( 9 )
+
+[node name="threaded_needle" parent="." instance=ExtResource( 8 )]
+position = Vector2( 29.6589, 31.5051 )
+material_name = "threaded_needle"
+material_desc = "All ready for sewing."
+
+[node name="Sprite" parent="threaded_needle" index="0"]
+texture = ExtResource( 58 )
+
+[node name="patched_umbrella" parent="." instance=ExtResource( 8 )]
+position = Vector2( 29.6589, 31.5051 )
+material_name = "patched_umbrella"
+material_desc = "All patched up!"
+
+[node name="Sprite" parent="patched_umbrella" index="0"]
+texture = ExtResource( 59 )
+
+[node name="fadeout" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+[editable path="folded_umbrella"]
+
+[editable path="fabric"]
+
+[editable path="scissors"]
+
+[editable path="thread"]
+
+[editable path="haystack"]
+
+[editable path="broken_umbrella"]
+
+[editable path="patch"]
+
+[editable path="needle"]
+
+[editable path="threaded_needle"]
+
+[editable path="patched_umbrella"]

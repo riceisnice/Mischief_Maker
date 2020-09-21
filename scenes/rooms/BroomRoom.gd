@@ -2,14 +2,15 @@ extends Sprite
 
 const TEXT_TIME = 2
 
-enum {READY, TXT1, TXT2, TXT3, SPAWN_MATS, GAMELOOP, LEVEL_WON, TXT4, END_LEVEL}
+enum {READY, TXT1, TXT2, TXT3, SPAWN_MATS, GAMELOOP, LEVEL_WON, TXT4, TXT5, END_LEVEL}
 
 var state
 var prepared_mats
+var third = false
 
 func _ready():
 	state = READY
-	$Sprite/Speech.text = "What can I make that will let me fly?"
+	$Sprite/Speech.text = "What else is good at flying...? Think... Think!"
 	$Timer.start(TEXT_TIME)
 	for n in get_tree().get_nodes_in_group("material"):
 		n.connect("clicked", self, "on_material_click")
@@ -27,44 +28,32 @@ func on_material_released(name):
 	var other
 	if not mat.overlapping.empty():
 		other = mat.overlapping.front().material_name
-		if name == "toy_car" and other == "girl":
-			$wheels.reveal()
-			$Sprite/Speech.text = $wheels.material_desc
-			$toy_car.hide()
-		elif (name == "wheels" and other == "clothespin") or (name == "clothespin" and other == "wheels"):
-			$Sprite/Speech.text = $pin_wheels.material_desc
-			$wheels.hide()
-			$clothespin.hide()
-			$pin_wheels.position = $clothespin.position
-			$pin_wheels.reveal()
-		elif (name == "popsicle_sticks" and other == "clothespin") or (name == "clothespin" and other == "popsicle_sticks"):
-			$Sprite/Speech.text = $pin_wings.material_desc
-			$popsicle_sticks.hide()
-			$clothespin.hide()
-			$pin_wings.position = $clothespin.position
-			$pin_wings.reveal()
-		elif (name == "popsicle_sticks" and other == "pin_wheels") or (name == "pin_wheels" and other == "popsicle_sticks"):
-			$Sprite/Speech.text = $plane.material_desc
-			$popsicle_sticks.hide()
-			$pin_wheels.hide()
-			$plane.position = $pin_wheels.position
-			$plane.reveal()
-			$plane.freeze()
+		if name == "swiffer" and other == "girl":
+			$swiffer.destroy()
+			$Sprite/Speech.text = "I don't need this, after all. Let's clean it out."
+		elif (name == "branch" and other == "clippers") or (name == "clippers" and other == "branch"):
+			$Sprite/Speech.text = $stick.material_desc
+			$branch.hide()
+			$clippers.hide()
+			$stick.reveal()
+			$twigs.reveal()
+		elif third and (name == "stick" or name == "twigs" or name == "twine") and (other == "stick" or other == "twigs" or other == "twine"):
+			$Sprite/Speech.text = $broom.material_desc
+			$stick.hide()
+			$twigs.hide()
+			$twine.hide()
+			$broom.position = $stick.position
+			$broom.reveal()
+			$broom.freeze()
 			state = LEVEL_WON
 			$Timer.start(TEXT_TIME)
 			$Sophia.make_animation()
-		elif (name == "wheels" and other == "pin_wings") or (name == "pin_wings" and other == "wheels"):
-			$Sprite/Speech.text = $plane.material_desc
-			$wheels.hide()
-			$pin_wings.hide()
-			$plane.position = $pin_wings.position
-			$plane.reveal()
-			$plane.freeze()
-			state = LEVEL_WON
-			$Timer.start(TEXT_TIME)
-			$Sophia.make_animation()
+		elif (name == "stick" or name == "twigs" or name == "twine") and (other == "stick" or other == "twigs" or other == "twine"):
+			$Sprite/Speech.text = "I think I need one more thing here."
+			third = true
 		else:
 			$Sprite/Speech.text = "That doesn't work..."
+			third = false
 		
 
 func find_material(name):
@@ -79,7 +68,7 @@ func spawn_material():
 		mat.reveal()
 		$Timer.start(1)
 	else:
-		$Sprite/Speech.text= "Click a part to learn more about it."
+		#$Sprite/Speech.text = "Click a part to learn more about it."
 		state = GAMELOOP
 
 func _input(event):
@@ -87,19 +76,23 @@ func _input(event):
 		match state:
 			TXT1:
 				$Sprite/Next.visible = false
-				$Sprite/Speech.text = "Maybe an airplane?"
+				$Sprite/Speech.text = "I got it!"
 				$Timer.start(TEXT_TIME)
 			TXT2:
 				$Sprite/Next.visible = false
-				$Sprite/Speech.text = "Yeah, I'll make an airplane."
+				$Sprite/Speech.text = "Witches fly on brooms, why couldn't I?"
 				$Timer.start(TEXT_TIME)
 			TXT3:
 				$Sprite/Next.visible = false
-				$Sprite/Speech.text = "First I need to gather some parts!"
+				$Sprite/Speech.text = "Sweep away all distractions, lets see what we got here."
 				$Timer.start(TEXT_TIME)
 			TXT4:
 				$Sprite/Next.visible = false
-				$Sprite/Speech.text = "I guess this is too small though. Oh well, back to the drawing board!"
+				$Sprite/Speech.text = "..."
+				$Timer.start(TEXT_TIME)
+			TXT5:
+				$Sprite/Next.visible = false
+				$Sprite/Speech.text = "I guess it doesn't work like in the movies. Third time's the charm!"
 				$Timer.start(TEXT_TIME)
 			END_LEVEL:
 				$MusicPlayer.stream_paused = true
@@ -127,6 +120,9 @@ func _on_Timer_timeout():
 			state = TXT4
 			$Sprite/Next.visible = true
 		TXT4:
+			state = TXT5
+			$Sprite/Next.visible = true
+		TXT5:
 			state = END_LEVEL
 			$Sprite/Next.visible = true
 

@@ -10,6 +10,7 @@ var can_grab = false
 var grabbed_offset = Vector2()
 var grabbing = false
 var hidden = false
+var destroying = false
 
 var overlapping = []
 
@@ -55,8 +56,11 @@ func _process(_delta):
 
 func _on_AnimatedSprite_animation_finished():
 	$AnimatedSprite.visible = false
-	$Sprite.visible = true
-	self.input_pickable = true
+	if not destroying:
+		$Sprite.visible = true
+		self.input_pickable = true
+	else:
+		hide()
 
 func reveal():
 	$AnimatedSprite.visible = true
@@ -65,6 +69,7 @@ func reveal():
 	monitorable = true
 	monitoring = true
 	hidden = false
+	destroying = false
 
 func freeze():
 	input_pickable = false
@@ -79,6 +84,12 @@ func hide():
 	monitorable = false
 	hidden = true
 
+func destroy():
+	$AnimatedSprite.visible = true
+	$AnimatedSprite.frame = 0
+	$AnimatedSprite.play()
+	$AnimatedSprite/AudioStreamPlayer.play()
+	destroying = true
 
 func _on_Material_area_entered(area):
 	overlapping.append(area)
