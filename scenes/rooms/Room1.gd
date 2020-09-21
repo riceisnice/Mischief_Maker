@@ -103,7 +103,9 @@ func _input(event):
 				$Sprite/Speech.text = "I guess this is too small though. Oh well, back to the drawing board!"
 				$Timer.start(TEXT_TIME)
 			END_LEVEL:
-				print ("level is over. move to next")
+				$MusicPlayer.stream_paused = true
+				$EndTune.play()
+				$fadeout.play()
 
 func _on_Timer_timeout():
 	match state:
@@ -128,3 +130,4 @@ func _on_Timer_timeout():
 		TXT4:
 			state = END_LEVEL
 			$Sprite/Next.visible = true
+

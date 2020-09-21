@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/popsicle_sticks.png-731dd0c1fa23650c177abff93c1b7b4d.stex"
+path="res://.import/fadeout0010.png-390ad5101794a4d47c7984aedceeb3ed.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/items/popsicle_sticks.png"
-dest_files=[ "res://.import/popsicle_sticks.png-731dd0c1fa23650c177abff93c1b7b4d.stex" ]
+source_file="res://sprites/fadeout/fadeout0010.png"
+dest_files=[ "res://.import/fadeout0010.png-390ad5101794a4d47c7984aedceeb3ed.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
