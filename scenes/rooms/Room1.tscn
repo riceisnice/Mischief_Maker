@@ -1,0 +1,135 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://sprites/room.png" type="Texture" id=1]
+[ext_resource path="res://scenes/objects/Sophia.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sprites/speech.png" type="Texture" id=3]
+[ext_resource path="res://sounds/Hopeful.wav" type="AudioStream" id=4]
+[ext_resource path="res://scenes/rooms/Room1.gd" type="Script" id=5]
+[ext_resource path="res://sounds/booom.wav" type="AudioStream" id=6]
+[ext_resource path="res://sprites/speech2.png" type="Texture" id=7]
+[ext_resource path="res://scenes/objects/Material.tscn" type="PackedScene" id=8]
+[ext_resource path="res://sprites/items/wheels.png" type="Texture" id=9]
+[ext_resource path="res://sprites/items/lego_car.png" type="Texture" id=10]
+[ext_resource path="res://sprites/items/clothespin.png" type="Texture" id=11]
+[ext_resource path="res://sprites/items/pin_wheels.png" type="Texture" id=12]
+[ext_resource path="res://sprites/items/plane.png" type="Texture" id=13]
+[ext_resource path="res://sprites/items/pin_wings.png" type="Texture" id=14]
+[ext_resource path="res://sprites/items/popsicle_sticks.png" type="Texture" id=15]
+
+[node name="Room1" type="Sprite"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+centered = false
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sophia" parent="." instance=ExtResource( 2 )]
+position = Vector2( 248, 175 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Speech" type="Label" parent="Sprite"]
+margin_left = 161.0
+margin_top = 40.0
+margin_right = 323.0
+margin_bottom = 91.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Next" type="Sprite" parent="Sprite"]
+visible = false
+texture = ExtResource( 7 )
+centered = false
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="toy_car" parent="." groups=[
+"start_mats",
+] instance=ExtResource( 8 )]
+position = Vector2( 356.056, 180.635 )
+material_name = "toy_car"
+material_desc = "A block car! Drag it to me, and I can take the wheels for my plane."
+
+[node name="Sprite" parent="toy_car" index="0"]
+texture = ExtResource( 10 )
+
+[node name="popsicle_sticks" parent="." groups=[
+"start_mats",
+] instance=ExtResource( 8 )]
+position = Vector2( 189.934, 230.189 )
+material_name = "popsicle_sticks"
+material_desc = "These popsicle sticks might make a good building material, maybe I can combine it with something?"
+
+[node name="Sprite" parent="popsicle_sticks" index="0"]
+texture = ExtResource( 15 )
+
+[node name="clothespin" parent="." groups=[
+"start_mats",
+] instance=ExtResource( 8 )]
+position = Vector2( 132.358, 172.612 )
+material_name = "clothespin"
+material_desc = "This clothespin is about the right shape for an airplane, I can probably use this as a base."
+
+[node name="Sprite" parent="clothespin" index="0"]
+texture = ExtResource( 11 )
+
+[node name="wheels" parent="." instance=ExtResource( 8 )]
+position = Vector2( 363.135, 192.906 )
+material_name = "wheels"
+material_desc = "Great, I can attach these to my plane!"
+
+[node name="Sprite" parent="wheels" index="0"]
+texture = ExtResource( 9 )
+
+[node name="pin_wings" parent="." instance=ExtResource( 8 )]
+position = Vector2( 128.11, 73.0335 )
+material_name = "pin_wings"
+material_desc = "Almost there."
+
+[node name="Sprite" parent="pin_wings" index="0"]
+texture = ExtResource( 14 )
+
+[node name="pin_wheels" parent="." instance=ExtResource( 8 )]
+position = Vector2( 30.8914, 145.24 )
+material_name = "pin_wheels"
+material_desc = "Almost there."
+
+[node name="Sprite" parent="pin_wheels" index="0"]
+texture = ExtResource( 12 )
+
+[node name="plane" parent="." instance=ExtResource( 8 )]
+position = Vector2( 60.6234, 57.4596 )
+material_name = "plane"
+material_desc = "That's it!"
+
+[node name="Sprite" parent="plane" index="0"]
+texture = ExtResource( 13 )
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+[editable path="toy_car"]
+
+[editable path="popsicle_sticks"]
+
+[editable path="clothespin"]
+
+[editable path="wheels"]
+
+[editable path="pin_wings"]
+
+[editable path="pin_wheels"]
+
+[editable path="plane"]

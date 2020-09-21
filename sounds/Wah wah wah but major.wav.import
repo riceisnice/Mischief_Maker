@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Wah wah wah but major.wav-73dc69b637d4b871830d046b55b95c19.sample"
+
+[deps]
+
+source_file="res://sounds/Wah wah wah but major.wav"
+dest_files=[ "res://.import/Wah wah wah but major.wav-73dc69b637d4b871830d046b55b95c19.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
