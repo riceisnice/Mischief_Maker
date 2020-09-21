@@ -143,3 +143,7 @@ func _on_Timer_timeout():
 			state = END_LEVEL
 			$Sprite/Next.visible = true
 
+
+
+func _on_EndTune_finished():
+	pass # Replace with function body.

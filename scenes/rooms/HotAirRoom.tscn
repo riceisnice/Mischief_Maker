@@ -218,6 +218,7 @@ centered = false
 __meta__ = {
 "_edit_lock_": true
 }
+[connection signal="finished" from="EndTune" to="." method="_on_EndTune_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 [editable path="fabric"]

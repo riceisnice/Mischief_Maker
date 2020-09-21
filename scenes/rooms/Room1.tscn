@@ -175,6 +175,7 @@ texture = ExtResource( 13 )
 [node name="fadeout" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 centered = false
+[connection signal="finished" from="EndTune" to="." method="_on_EndTune_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 [editable path="toy_car"]

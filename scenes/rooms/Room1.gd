@@ -132,3 +132,7 @@ func _on_Timer_timeout():
 			state = END_LEVEL
 			$Sprite/Next.visible = true
 
+
+
+func _on_EndTune_finished():
+	get_tree().change_scene("res://scenes/rooms/BroomRoom.tscn")

@@ -42,6 +42,7 @@ func on_material_released(name):
 			$stick.hide()
 			$twigs.hide()
 			$twine.hide()
+			$swiffer.hide()
 			$broom.position = $stick.position
 			$broom.reveal()
 			$broom.freeze()
@@ -128,3 +129,7 @@ func _on_Timer_timeout():
 			state = END_LEVEL
 			$Sprite/Next.visible = true
 
+
+
+func _on_EndTune_finished():
+	get_tree().change_scene("res://scenes/rooms/UmbrellaRoom.tscn")
