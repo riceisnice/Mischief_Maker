@@ -28,23 +28,20 @@ strapped wings
 	*twine
 
 **balloon basket**
-basket
-balloon bag
-*twine
-helium tank
+	basket
+	balloon bag
+	*twine
+	helium tank
 helium balloons
 
 **hot air balloon**
-*fabric
-*scissors
-*balloon basket
+	*fabric
+	*scissors
+	*balloon basket
 *basket
 large balloon
-*needle
-*thread
-*threaded needle
-*twine
+	*twine
 rope
 roped balloon
 air balloon
-propane tank
+	propane tank
