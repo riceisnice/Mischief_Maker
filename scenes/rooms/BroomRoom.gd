@@ -75,23 +75,28 @@ func _input(event):
 			TXT1:
 				$Sprite/Next.visible = false
 				$Sprite/Speech.text = "I got it!"
-				$Timer.start(TEXT_TIME)
+				if $Timer.is_stopped():
+					$Timer.start(TEXT_TIME)
 			TXT2:
 				$Sprite/Next.visible = false
 				$Sprite/Speech.text = "Witches fly on brooms, why couldn't I?"
-				$Timer.start(TEXT_TIME)
+				if $Timer.is_stopped():
+					$Timer.start(TEXT_TIME)
 			TXT3:
 				$Sprite/Next.visible = false
 				$Sprite/Speech.text = "Sweep away all distractions, lets see what we got here."
-				$Timer.start(TEXT_TIME)
+				if $Timer.is_stopped():
+					$Timer.start(TEXT_TIME)
 			TXT4:
 				$Sprite/Next.visible = false
 				$Sprite/Speech.text = "..."
-				$Timer.start(TEXT_TIME)
+				if $Timer.is_stopped():
+					$Timer.start(TEXT_TIME)
 			TXT5:
 				$Sprite/Next.visible = false
 				$Sprite/Speech.text = "I guess it doesn't work like in the movies. Third time's the charm!"
-				$Timer.start(TEXT_TIME)
+				if $Timer.is_stopped():
+					$Timer.start(TEXT_TIME)
 			END_LEVEL:
 				$MusicPlayer.stream_paused = true
 				$EndTune.play()

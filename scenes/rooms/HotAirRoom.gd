@@ -91,23 +91,28 @@ func _input(event):
 			TXT1:
 				$Sprite/Next.visible = false
 				$Sprite/Speech.text = "What if I made a hot air balloon?"
-				$Timer.start(TEXT_TIME)
+				if $Timer.is_stopped():
+					$Timer.start(TEXT_TIME)
 			TXT2:
 				$Sprite/Next.visible = false
 				$Sprite/Speech.text = "Those are like, actual things that exist."
-				$Timer.start(TEXT_TIME)
+				if $Timer.is_stopped():
+					$Timer.start(TEXT_TIME)
 			TXT3:
 				$Sprite/Next.visible = false
 				$Sprite/Speech.text = "I can do this!"
-				$Timer.start(TEXT_TIME)
+				if $Timer.is_stopped():
+					$Timer.start(TEXT_TIME)
 			TXT4:
 				$Sprite/Next.visible = false
 				$Sprite/Speech.text = "..."
-				$Timer.start(TEXT_TIME)
+				if $Timer.is_stopped():
+					$Timer.start(TEXT_TIME)
 			TXT5:
 				$Sprite/Next.visible = false
 				$Sprite/Speech.text = "This might just actually work! Time to get airborne!"
-				$Timer.start(TEXT_TIME)
+				if $Timer.is_stopped():
+					$Timer.start(TEXT_TIME)
 			END_LEVEL:
 				$MusicPlayer.stream_paused = true
 				$EndTune.play()
