@@ -145,4 +145,4 @@ func _on_Timer_timeout():
 
 
 func _on_EndTune_finished():
-	pass # Replace with function body.
+	get_tree().change_scene("res://Credits.tscn")
