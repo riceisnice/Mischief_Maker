@@ -1,0 +1,49 @@
+**broom**
+swiffer
+branch
+stick
+twigs
+*twine
+clippers
+
+**umbrella**
+folded umbrella
+broken umbrella
+*fabric
+*scissors
+patch
+thread
+haystack
+needle
+threaded needle
+
+**wings**
+pillow
+feathers
+cardboard box
+*scissors
+cardboard wings
+*twine
+
+**balloon basket**
+basket
+balloon bag
+*twine
+helium tank
+helium balloons
+
+**hot air balloon**
+*fabric
+*scissors
+*balloon basket
+*basket
+large balloon
+*needle
+*thread
+*threaded needle
+*twine
+rope
+roped basket
+roped balloon
+air balloon
+propane tank
