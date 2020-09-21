@@ -68,12 +68,13 @@ animations = [ {
 extents = Vector2( 15.1516, 38.3407 )
 
 [node name="Sophia" type="Area2D"]
+z_index = 5
 script = ExtResource( 50 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "idle"
-frame = 7
+frame = 13
 playing = true
 __meta__ = {
 "_edit_lock_": true
