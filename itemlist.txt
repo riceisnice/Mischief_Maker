@@ -7,23 +7,25 @@ twigs
 clippers
 
 **umbrella**
-folded umbrella
+	folded umbrella
 broken umbrella
-*fabric
-*scissors
+	*fabric
+	*scissors
 patch
-thread
-haystack
+	thread
+	haystack
 needle
 threaded needle
 
 **wings**
-pillow
+	pillow
 feathers
-cardboard box
-*scissors
+	cardboard box
+	*scissors
 cardboard wings
-*twine
+feathered wings
+strapped wings
+	*twine
 
 **balloon basket**
 basket
@@ -43,7 +45,6 @@ large balloon
 *threaded needle
 *twine
 rope
-roped basket
 roped balloon
 air balloon
 propane tank

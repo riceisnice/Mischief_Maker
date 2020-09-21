@@ -104,6 +104,8 @@ func _input(event):
 			END_LEVEL:
 				$MusicPlayer.stream_paused = true
 				$EndTune.play()
+				$Sophia.z_index = 0
+				$plane.z_index = 10
 				$fadeout.play()
 
 func _on_Timer_timeout():
